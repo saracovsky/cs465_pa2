@@ -1,0 +1,229 @@
+<html>
+
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute  vec4 vPosition;
+attribute  vec4 vColor;
+varying vec4 fColor;
+
+uniform mat4 modelViewMatrix;
+uniform mat4 projectionMatrix;
+
+void main() 
+{
+    fColor = vColor;
+    gl_Position = projectionMatrix * modelViewMatrix * vPosition;
+} 
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+    precision mediump float;
+
+    varying  vec4 fColor;
+    
+    void main() 
+    { 
+        gl_FragColor = fColor;
+    } 
+</script>
+
+
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/InitShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="figure.js"></script>
+
+<div id ="slider0">
+torso angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+
+</div><br/>
+<div style = "position:relative; left:1100px; top:-40px" id="slider1">
+head1 angle -90 <input id="slide" type="range"
+min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; top:-40px" id="slider2">
+left upper leg angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; left:340px; top:-80px" id="slider3">
+left middle leg angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; left:700px; top:-120px" id="slider4">
+left lower leg angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; top:-120px" id="slider5">
+left upper leg 2 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; left:340px; top:-160px" id="slider6">
+left middle leg 2 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; left:700px; top:-200px" id="slider7">
+left lower leg 2 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; top:-200px" id="slider8">
+left upper leg 3 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; left:340px; top:-240px" id="slider9">
+left middle leg 3 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; left:700px; top:-280px" id="slider10">
+left lower leg 3 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; top:-280px" id="slider11">
+left upper leg 4 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; left:340px; top:-320px" id="slider12">
+left middle leg 4 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; left:700px; top:-360px" id="slider13">
+left lower leg 4 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; top:-360px" id="slider14">
+right upper leg angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; left:340px; top:-400px" id="slider15">
+right middle leg angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; left:700px; top:-440px" id="slider16">
+right lower leg angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; top:-440px" id="slider17">
+right upper leg 2 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; left:340px; top:-480px" id="slider18">
+right middle leg 2 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; left:700px; top:-520px" id="slider19">
+right lower leg 2 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; top:-520px" id="slider20">
+right upper leg 3 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; left:340px; top:-560px" id="slider21">
+right middle leg 3 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; left:700px; top:-600px" id="slider22">
+right lower leg 3 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; top:-600px" id="slider23">
+right upper leg 4 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; left:340px; top:-640px" id="slider24">
+right middle leg 4 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+
+<div style = "position:relative; left:700px; top:-680px" id="slider25">
+right lower leg 4 angle -90 <input id="slide" type="range"
+ min="-90" max="90" step="10" value="0"
+  />
+ 90
+</div><br/>
+<div style = "position:relative; top: -680px" id="slider26">
+    torso31 angle -90 <input id="slide" type="range"
+    min="-90" max="90" step="10" value="0"
+/>
+90
+</div><br/>
+<div style = "position:relative; left: 340px;  top:-720px" id="slider27">
+torso32 angle -90 <input id="slide" type="range"
+min="-90" max="90" step="10" value="0"
+ />
+90
+ 
+</div><br/>
+<input style = "position:relative; top:-680px" type="button" value="Save" onclick="save_animation()">
+ 
+<input style = "position:relative; left:50px; top:-680px" type='file' accept='text/plain' onchange='openFile(event)'>
+<input style = "position:relative; left:100px; top:-680px" type="button" value="Play" onclick="play_animation()">
+</div><br/>
+<body>
+<canvas style = "position:relative; top:-600px" id="gl-canvas" width="512"" height="512"
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</body>
+</html>
